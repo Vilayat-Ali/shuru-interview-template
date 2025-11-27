@@ -6,6 +6,7 @@ import errorMiddleware from "./middlewares/error.middleware";
 import { requestEndMiddleware } from "./middlewares/requestBenmark.middleware";
 import { getConfigService } from "./configs/config.service";
 import AppContextService from "./context";
+import {setupServerRoutes} from './domains/routes';
 
 export const bootstrapServer = async () => {
     try {
@@ -32,6 +33,8 @@ export const bootstrapServer = async () => {
                 next(error);
             }
         });
+
+        setupServerRoutes(1, app);
 
         app.use(errorMiddleware);
         app.use(requestEndMiddleware);
