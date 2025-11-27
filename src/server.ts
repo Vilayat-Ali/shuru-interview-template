@@ -30,6 +30,8 @@ export const bootstrapServer = async () => {
             } catch (error) {
                 console.log(error)
                 next(error);
+            } finally {
+                next()
             }
         });
 

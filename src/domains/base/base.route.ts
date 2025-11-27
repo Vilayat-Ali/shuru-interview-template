@@ -38,6 +38,8 @@ export abstract class BaseRoute implements IBaseRoute {
                 await controllerFn(request, response, next);
             } catch (error) {
                 next(error);
+            } finally {
+                next();
             }
         }
     }
