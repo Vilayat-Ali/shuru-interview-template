@@ -1,7 +1,6 @@
 import express from "express";
 import { defaultMiddlewares } from "./middlewares";
 import { initializePrismaClient } from "./database/db.util";
-import initializeAppContext from "./context";
 import errorMiddleware from "./middlewares/error.middleware";
 import { requestEndMiddleware } from "./middlewares/requestBenmark.middleware";
 import { getConfigService } from "./configs/config.service";

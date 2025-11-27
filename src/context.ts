@@ -1,6 +1,5 @@
 import express from "express";
 import type { PrismaClient } from "./generated/prisma/client.js";
-import { readonly } from "zod";
 
 export interface IAppContext {
     app: express.Express;
